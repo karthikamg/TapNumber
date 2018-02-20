@@ -96,7 +96,14 @@ def enableProguardInReleaseBuilds = false
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
+    signingConfigs {
+        release {
+            keyAlias 'TapNumbers'
+            keyPassword '123456789'
+            storeFile file('../keystores/tapNumberRelease.jks')
+            storePassword '123456789'
+        }
+    }
     defaultConfig {
         applicationId "com.tapnumbersapp"
         minSdkVersion 16
@@ -119,6 +126,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release

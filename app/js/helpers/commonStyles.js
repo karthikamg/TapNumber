@@ -28,5 +28,24 @@ export default StyleSheet.create({
         transform: [
             {scaleX: 2}
         ]
-    }
+    },
+    chatheaderLeft: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        flexDirection: 'row'
+      },
+      backBtn: {
+        width: 22,
+        height: 20,
+        marginLeft: 15,
+        marginRight: 10,
+        marginTop: 20
+      },
+      headerTitle: {
+        paddingLeft: 10,
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 18
+      }
 });

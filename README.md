@@ -1,0 +1,1 @@
+This is a basic react native basic app to learn more about react native.

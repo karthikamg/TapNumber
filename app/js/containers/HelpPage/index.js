@@ -45,7 +45,7 @@ export default class HelpPage extends Component {
     render () {
         return (
             <View style={commonStyles.container}>
-                <Text>Help</Text>
+                <Text style={commonStyles.headerTitle}>Help</Text>
             </View>
         );
     }

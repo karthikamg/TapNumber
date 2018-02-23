@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { skyBlue, darkCream } from '../helpers/commonConstants';
+import { skyBlue, darkCream, darkBrown } from '../helpers/commonConstants';
 
 export default StyleSheet.create({
     container: {
@@ -32,19 +32,19 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         flexDirection: 'row'
-      },
-      backBtn: {
+    },
+    backBtn: {
         width: 22,
         height: 20,
         marginLeft: 15,
         marginRight: 10,
         marginTop: 20
-      },
-      headerTitle: {
+    },
+    headerTitle: {
         paddingLeft: 10,
-        color: '#fff',
+        color: darkBrown,
         fontSize: 18,
         fontWeight: 'bold',
         marginTop: 18
-      }
+    }
 });

@@ -3,7 +3,8 @@ import {
     View,
     Text,
     TouchableOpacity,
-    BackHandler
+    BackHandler,
+    Image
 } from 'react-native';
 
 import styles from './style';
@@ -45,7 +46,7 @@ export default class LevelPage extends Component {
     render () {
         return (
             <View style={commonStyles.container}>
-                <Text>Level</Text>
+                <Text style={commonStyles.headerTitle}>Level</Text>
             </View>
         );
     }

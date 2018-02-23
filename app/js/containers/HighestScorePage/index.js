@@ -3,7 +3,9 @@ import {
     View,
     Text,
     TouchableOpacity,
-    BackHandler
+    BackHandler,
+    Image,
+    AsyncStorage
 } from 'react-native';
 
 import styles from './style';
@@ -14,13 +16,19 @@ import { darkCream, white, highestScore, home } from '../../helpers/commonConsta
 export default class HighestScorePage extends Component {
     constructor (props) {
         super(props);
+        this.state = {
+            scoreToDisplay : 0
+        };
     }
 
     componentDidMount () {
         BackHandler.addEventListener("hardwareBackPress", (e) => {
             this.props.navigation.navigate(home);
             return true;
-        })
+        });
+        AsyncStorage.getItem('score').then(score => {
+            this.setState({scoreToDisplay: score});
+        });
     }
 
     static navigationOptions = ({ navigation }) => ({
@@ -45,7 +53,7 @@ export default class HighestScorePage extends Component {
     render () {
         return (
             <View style={commonStyles.container}>
-                <Text>Highest Score</Text>
+                <Text style={commonStyles.headerTitle}>Score: {this.state.scoreToDisplay}</Text>
             </View>
         );
     }

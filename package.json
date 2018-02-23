@@ -9,8 +9,10 @@
   "dependencies": {
     "react": "16.0.0",
     "react-native": "0.51.1",
+    "react-native-flip-card": "^3.5.2",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-material-dropdown": "^0.8.0",
+    "react-native-progress-bar": "^0.1.2",
     "react-navigation": "^1.0.3"
   },
   "devDependencies": {

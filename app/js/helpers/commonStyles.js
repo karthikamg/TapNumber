@@ -1,13 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-import { skyBlue, saffron } from '../helpers/commonConstants';
+import { skyBlue, darkCream } from '../helpers/commonConstants';
 
 export default StyleSheet.create({
     container: {
-        padding: 15,
         flex: 1,
         alignItems: 'center',
-        backgroundColor: saffron
+        backgroundColor: darkCream
     },
     imgButton: {
         width: 20,

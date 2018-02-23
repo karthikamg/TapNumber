@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 import { darkCream, darkBrown } from '../../helpers/commonConstants';
 
 export default StyleSheet.create({
-    homeTitle: {
-        fontSize: 45,
+    gameOverText: {
+        fontSize: 25,
         fontWeight: 'bold',
         color: darkBrown,
         justifyContent: 'center',
@@ -12,8 +12,11 @@ export default StyleSheet.create({
         paddingTop: 120,
         paddingBottom: 20
     },
-    backgroundImage: {
-        flex: 1,
-        resizeMode: 'cover', // or 'stretch'
+    scoreText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: darkBrown,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 });

@@ -1,18 +1,18 @@
 import { StyleSheet } from 'react-native';
 
-import { white } from '../../helpers/commonConstants';
+import { darkBrown } from '../../helpers/commonConstants';
 
 export default StyleSheet.create({
     customBtn: {
-        borderWidth: 1,
+        borderWidth: 2,
         backgroundColor: 'transparent',
         borderRadius: 25,
-        borderColor: white,
+        borderColor: darkBrown,
         flexDirection: 'row',
         marginTop: 40
     },
     btnText: {
-        color: white,
+        color: darkBrown,
         fontWeight: 'bold',
         fontSize: 25,
         paddingTop: 10,
@@ -24,7 +24,7 @@ export default StyleSheet.create({
     },
     btnIcon: {
         padding: 25,
-        width: 10,
-        height: 10
+        width: 5,
+        height: 5
     }
 });

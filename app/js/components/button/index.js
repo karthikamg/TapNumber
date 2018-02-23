@@ -22,9 +22,13 @@ export default class ButtonCom extends Component {
         let buttonId = this.props.id;
         switch (buttonId)  {
             case 0: 
-                this.setState({buttonText: 'Start', buttonIcon: require('../../../img/play-white.png')});
+                this.setState({buttonText: 'Start', buttonIcon: require('../../../img/play-btn-brown.png')});
                 break;
         }
+    }
+
+    onStartButtonPress = () => {
+        this.props.onStartButtonPress();
     }
 
     static navigationOptions = ({ navigation }) => ({
@@ -33,7 +37,7 @@ export default class ButtonCom extends Component {
 
     render () {
         return (
-            <TouchableOpacity style={styles.customBtn}>
+            <TouchableOpacity style={styles.customBtn} onPress={this.onStartButtonPress}>
                 <Text style={styles.btnText}>{this.state.buttonText}</Text>
                 <Image style={styles.btnIcon} source={this.state.buttonIcon}/>
             </TouchableOpacity>

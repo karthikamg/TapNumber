@@ -3,24 +3,27 @@ import {
     View,
     Text,
     Image,
-    TouchableHighlight
+    TouchableHighlight,
+    BackHandler
 } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
+import LinearGradient from 'react-native-linear-gradient';
 
 import commonStyles from '../../helpers/commonStyles';
-import { dropDownData, saffron, black, highestScore, level, help } from '../../helpers/commonConstants';
+import { dropDownData, black, highestScore, level, help, playGame, darkCream, midCream } from '../../helpers/commonConstants';
 import styles from './style';
 
 import ButtonCom from '../../components/button';
 import TileCom from '../../components/tiles';
 
-let staticTileNumber = '7';
+let staticTileNumber = '67';
 
 export default class HomePage extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            selectedBgColor: 'transparent'
+            selectedBgColor: 'transparent',
+            progress: 0
         }
     }
 
@@ -45,13 +48,20 @@ export default class HomePage extends Component {
                 } 
             }
         }
+        BackHandler.addEventListener("hardwareBackPress", (e) => {
+            BackHandler.exitApp();
+        })
+    }
+
+    onStartButtonPress = () => {
+        this.props.navigation.navigate(playGame);
     }
 
     static navigationOptions = ({ navigation }) => ({
         title: '',
         headerLeft: null,
         headerStyle: {
-            backgroundColor: saffron,
+            backgroundColor: darkCream,
             elevation: 0,
             padding: 15
         },
@@ -73,12 +83,15 @@ export default class HomePage extends Component {
     });
 
     render () {
+        setTimeout((function() {
+            this.setState({ progress: this.state.progress + (0.4 * Math.random())});
+        }).bind(this), 1000);
         return (
-            <View style={commonStyles.container}>
+            <LinearGradient colors={[darkCream, midCream]} style={[styles.linearGradient, commonStyles.container]}>                   
                 <Text style={styles.homeTitle}>Tap Numbers</Text>
-                <TileCom titleNumber={staticTileNumber} />
-                <ButtonCom id={0}/>
-            </View>
+                {/* <TileCom titleNumber={staticTileNumber} titleIcon={'happy-emoji'} /> */}
+                <ButtonCom id={0} onStartButtonPress = { this.onStartButtonPress }/>
+            </LinearGradient>
         );
     }
 }

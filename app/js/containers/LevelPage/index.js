@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    BackHandler
 } from 'react-native';
 
 import styles from './style';
 import commonStyles from '../../helpers/commonStyles';
 
-import { saffron, white, level } from '../../helpers/commonConstants';
+import { darkCream, white, level, home } from '../../helpers/commonConstants';
 
 export default class LevelPage extends Component {
     constructor (props) {
@@ -16,11 +17,15 @@ export default class LevelPage extends Component {
     }
 
     componentDidMount () {
+        BackHandler.addEventListener("hardwareBackPress", (e) => {
+            this.props.navigation.navigate(home);
+            return true;
+        })
     }
 
     static navigationOptions = ({ navigation }) => ({
         headerStyle: {
-            backgroundColor: saffron,
+            backgroundColor: darkCream,
             elevation: 0
         },
         headerTitleStyle: {

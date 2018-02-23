@@ -9,7 +9,7 @@ import {
 
 import styles from './style';
 import commonStyles from '../../helpers/commonStyles';
-import { home, saffron, white, help } from '../../helpers/commonConstants';
+import { home, darkCream, white, help } from '../../helpers/commonConstants';
 
 export default class HelpPage extends Component {
     constructor (props) {
@@ -25,7 +25,7 @@ export default class HelpPage extends Component {
 
     static navigationOptions = ({ navigation }) => ({
         headerStyle: {
-            backgroundColor: saffron,
+            backgroundColor: darkCream,
             elevation: 0
         },
         headerTitleStyle: {
